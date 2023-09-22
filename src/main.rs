@@ -114,7 +114,7 @@ fn create_image_with_alfa_channel(
                             }
                             None => {
                                 eprintln!(
-                                    "Не удалось найти интерполированное значение для точки ({},{}).",
+                                    "Не удалось найти интерполированное значение для точки ({}, {}).",
                                     x, y
                                 );
                                 None
@@ -150,7 +150,7 @@ fn create_image_with_alfa_channel(
 
 fn main() -> Result<(), ImageError> {
     if !Path::new("image.png").exists() {
-        eprintln!("Файла image.png не существует (нужен для калибровки). Пожалуйста, положите его в директории с исполняемым файлом.");
+        eprintln!("Файл image.png не найден (нужен для калибровки). Пожалуйста, положите его в директорию с исполняемым файлом.");
         io::stdout().flush().unwrap();
         io::stdin().read_line(&mut String::new()).unwrap();
         return Ok(());
